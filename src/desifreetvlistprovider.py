@@ -20,12 +20,12 @@ def fetch_channels_list():
     category_url = 'http://www.desifreetv.co/category/%s/'
 
     channel_list = [
-        create_entry('Hum TV', category_url % 'hum-tv-dramas', ''),
-        create_entry('Hum Sitaray', category_url % 'humsitaray-dramas', ''),
-        create_entry('ARY', category_url % 'ary-dramas', ''),
+        create_entry('Hum TV', category_url % 'hum-tv-dramas', 'http://www.lyngsat-logo.com/hires/hh/hum_tv_pk.png'),
+        create_entry('Hum Sitaray', category_url % 'humsitaray-dramas', 'http://www.lyngsat-logo.com/hires/hh/hum_tv_sitaray.png'),
+        create_entry('ARY', category_url % 'ary-dramas', 'http://www.lyngsat-logo.com/hires/aa/ary_digital_asia.png'),
         create_entry('ARY Zindagi', category_url % 'ary-zindagi', ''),
-        create_entry('Geo TV', category_url % 'geo-tv-dramas', ''),
-        create_entry('APlus', category_url % 'a-plus', ''),
+        create_entry('Geo TV', category_url % 'geo-tv-dramas', 'http://www.lyngsat-logo.com/hires/gg/geo_tv_me.png'),
+        create_entry('APlus', category_url % 'a-plus', 'http://www.lyngsat-logo.com/hires/aa/a_plus_pk.png'),
         create_entry('Urdu1', category_url % 'urdu-1', ''),
         create_entry('Ptv', category_url % 'ptv', ''),
     ]

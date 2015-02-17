@@ -2,7 +2,7 @@
 Setup Development Environment
 ------------------------------
 
-1. Create a zip file of folder ```plugin.video.desifreetv``` such that the root of zip file contains only ```plugin.video.desifreetv``` folder.
+1. Run in command window ```python makerelease.py```. This will create a zip file named ```plugin-video.desifreetv-x.x.x.zip```
 
 2. In Kodi interface, select "Install addon from Zip File" and select the zip file created in previous step.
 

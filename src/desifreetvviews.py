@@ -1,5 +1,6 @@
 import sys
 
+import xbmc
 import xbmcgui
 import xbmcplugin
 
@@ -16,21 +17,19 @@ class DesiFreeTvViewBase:
         pass
 
     # common function for adding folder items
-    def addFolderListItem(self, params={}, item_params={}, size=0):
+    def add_folder_list_item(self, item_params={}, size=0):
         _logger.debug('addFolderListItem', item_params)
 
         title = item_params.get('title')
         path = item_params.get('path')
 
-        icon = 'DefaultFolder.png'
+        icon = kodiaddonutils.DEFAULT_FOLDER_IMAGE
         if icon:
             icon = kodiaddonutils.getThumbnail(icon)
-        else:
-            icon = 'DefaultFolder.png'
 
-        thumbnail = item_params.get('thumbnail', 'DefaultFolder.png')
+        thumbnail = item_params.get('thumbnail', kodiaddonutils.DEFAULT_FOLDER_IMAGE)
 
-        if (thumbnail.find('http://') == - 1):
+        if thumbnail.find('http://') < 0:
             thumbnail = kodiaddonutils.getThumbnail(thumbnail)
 
         listitem = xbmcgui.ListItem(title, iconImage=icon, thumbnailImage=thumbnail)
@@ -104,7 +103,7 @@ class DesiFreeTvFolderListView(DesiFreeTvViewBase):
         cache = True
 
         for entry in entries_list:
-            self.addFolderListItem(item_params=entry)
+            self.add_folder_list_item(item_params=entry)
 
         self.set_video_mode()
 
