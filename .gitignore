@@ -1,0 +1,8 @@
+.idea
+*.zip
+*.pyo
+*.pyc
+test-code
+tmp
+.tmp
+Thumbs.db
