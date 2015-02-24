@@ -5,7 +5,7 @@ import shutil
 
 ADDON_NAME = 'DesiFreeTV'
 ADDON_ID = 'plugin.video.desifreetv'
-ADDON_VER = '0.1.0'
+ADDON_VER = '0.1.1'
 
 
 DIR_TEMP = 'tmp'
@@ -21,7 +21,7 @@ def zipdir(path, zip_file):
 
 
 def prepare_dir_to_zip():
-    dest = os.path.join(DIR_TEMP, ADDON_ID)
+    dest = os.path.join(os.path.join(DIR_TEMP, 'src'), ADDON_ID)
     shutil.copytree(DIR_SRC, dest, ignore=shutil.ignore_patterns('*.pyc', '*.pyo', 'xbmcenv.py'))
     return dest
 
@@ -32,9 +32,8 @@ if __name__ == '__main__':
         shutil.rmtree(DIR_TEMP)
 
     dest = '.\\' + prepare_dir_to_zip() + os.sep
-    print 'dest', dest
 
-    zip_filename = '%s-%s.zip' % (ADDON_ID, ADDON_VER)
+    zip_filename = os.path.join(DIR_TEMP, '%s-%s.zip' % (ADDON_ID, ADDON_VER))
 
     zip_file = None
     try:
