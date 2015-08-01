@@ -20,14 +20,14 @@ def fetch_channels_list():
     category_url = 'http://www.desifreetv.co/category/%s/'
 
     channel_list = [
-        create_entry('Hum TV', category_url % 'hum-tv-dramas', 'http://www.lyngsat-logo.com/hires/hh/hum_tv_pk.png'),
-        create_entry('Hum Sitaray', category_url % 'humsitaray-dramas', 'http://www.lyngsat-logo.com/hires/hh/hum_tv_sitaray.png'),
-        create_entry('ARY', category_url % 'ary-dramas', 'http://www.lyngsat-logo.com/hires/aa/ary_digital_asia.png'),
-        create_entry('ARY Zindagi', category_url % 'ary-zindagi', ''),
-        create_entry('Geo TV', category_url % 'geo-tv-dramas', 'http://www.lyngsat-logo.com/hires/gg/geo_tv_me.png'),
-        create_entry('APlus', category_url % 'a-plus', 'http://www.lyngsat-logo.com/hires/aa/a_plus_pk.png'),
-        create_entry('Urdu1', category_url % 'urdu-1', ''),
-        create_entry('Ptv', category_url % 'ptv', ''),
+        create_entry('Hum TV',      category_url % 'hum-tv-dramas', 'http://i.imgur.com/SPbcdsI.png'),
+        create_entry('Hum Sitaray', category_url % 'humsitaray-dramas', 'http://i.imgur.com/GtoMqkd.png'),
+        create_entry('ARY',         category_url % 'ary-dramas', 'http://i.imgur.com/Qpvx9N4.png'),
+        create_entry('ARY Zindagi', category_url % 'ary-zindagi', 'http://i.imgur.com/a1PH1wk.png'),
+        create_entry('Geo TV',      category_url % 'geo-tv-dramas', 'http://i.imgur.com/YELzFHv.png'),
+        create_entry('APlus',       category_url % 'a-plus', 'http://i.imgur.com/wynK0iI.png'),
+        create_entry('Urdu1',       category_url % 'urdu-1', 'http://i.imgur.com/9i396WG.jpg'),
+        create_entry('Ptv',         category_url % 'ptv', 'http://i.imgur.com/vJPo6xO.png'),
     ]
 
     return channel_list

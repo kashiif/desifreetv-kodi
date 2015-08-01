@@ -63,7 +63,7 @@ def _show_episode(params):
     url_to_play = available_sources.get('dailymotion').get('urls')
     url_to_play = url_to_play[0]
 
-    print 'url_to_play: %s' % url_to_play
+    print 'url_to_play: "%s" - "%s"' % (title, url_to_play)
 
     if url_to_play:
         playlist = xbmc.PlayList(1)
