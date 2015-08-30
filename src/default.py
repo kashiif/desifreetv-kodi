@@ -56,14 +56,16 @@ def _show_episodes_menu(params):
 def _show_episode(params):
 
     title = params.get('title')
+    title = urllib2.unquote(title)
+
     available_sources = desifreetvlistprovider.fetch_episode_sources(params)
 
-    _logger.debug('Listing episodes for ', available_sources)
+    _logger.debug('Listing sources for ', available_sources)
 
     url_to_play = available_sources.get('dailymotion').get('urls')
     url_to_play = url_to_play[0]
 
-    print 'url_to_play: "%s" - "%s"' % (title, url_to_play)
+    print 'url_to_play: %s' % url_to_play, title
 
     if url_to_play:
         playlist = xbmc.PlayList(1)

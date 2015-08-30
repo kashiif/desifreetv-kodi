@@ -42,7 +42,7 @@ def getThumbnail(title):
 
 def build_item_url(item_params={}, url=''):
     blacklist = ('path', 'thumbnail', 'Overlay', 'icon', 'next', 'content', 'editid', 'summary', 'published', 'count',
-                 'Rating', 'Plot', 'title', 'new_results_function', 'handler_class')
+                 'Rating', 'Plot', 'new_results_function', 'handler_class')
     for key, value in item_params.items():
         if key not in blacklist:
             url += key + '=' + value + '&'
