@@ -20,14 +20,21 @@ def fetch_channels_list():
     category_url = 'http://www.desifreetv.co/category/%s/'
 
     channel_list = [
-        create_entry('Hum TV',      category_url % 'hum-tv-dramas', 'http://i.imgur.com/SPbcdsI.png'),
-        create_entry('Hum Sitaray', category_url % 'humsitaray-dramas', 'http://i.imgur.com/GtoMqkd.png'),
-        create_entry('ARY',         category_url % 'ary-dramas', 'http://i.imgur.com/Qpvx9N4.png'),
-        create_entry('ARY Zindagi', category_url % 'ary-zindagi', 'http://i.imgur.com/a1PH1wk.png'),
-        create_entry('Geo TV',      category_url % 'geo-tv-dramas', 'http://i.imgur.com/YELzFHv.png'),
-        create_entry('APlus',       category_url % 'a-plus', 'http://i.imgur.com/wynK0iI.png'),
-        create_entry('Urdu1',       category_url % 'urdu-1', 'http://i.imgur.com/9i396WG.jpg'),
-        create_entry('Ptv',         category_url % 'ptv', 'http://i.imgur.com/vJPo6xO.png'),
+        {
+        'title': 'Recent Episodes',
+        'url': 'http://www.desifreetv.co/',
+        'pagetype': 'recent-episodes',
+        'thumbnail': 'http://i.imgur.com/qSzxay9.png'
+        },
+
+        create_entry('Hum TV',          category_url % 'hum-tv-dramas', 'http://i.imgur.com/SPbcdsI.png'),
+        create_entry('Hum Sitaray',     category_url % 'humsitaray-dramas', 'http://i.imgur.com/GtoMqkd.png'),
+        create_entry('ARY',             category_url % 'ary-dramas', 'http://i.imgur.com/Qpvx9N4.png'),
+        create_entry('ARY Zindagi',     category_url % 'ary-zindagi', 'http://i.imgur.com/a1PH1wk.png'),
+        create_entry('Geo TV',          category_url % 'geo-tv-dramas', 'http://i.imgur.com/YELzFHv.png'),
+        create_entry('APlus',           category_url % 'a-plus', 'http://i.imgur.com/wynK0iI.png'),
+        create_entry('Urdu1',           category_url % 'urdu-1', 'http://i.imgur.com/9i396WG.jpg'),
+        create_entry('Ptv',             category_url % 'ptv', 'http://i.imgur.com/vJPo6xO.png'),
     ]
 
     return channel_list
@@ -121,9 +128,10 @@ def fetch_channel_shows(params):
 def fetch_episodes(params):
 
     # show-name:3, thumbnail: 2, url: 1
-    reToMatch = '(<div class="the_excrept">\s*<h2><a href="(.*)" rel="bookmark">(.*)<\/a><\/h2>\s*<div class="excerpt_content">)'
+    reToMatch = '(<div class="excrept_in">\s*<div class="thumbnail">.*\s*<img (style=".*[^"]"\s)*src="(.*)"\/><\/a><\/div>\s*' \
+                '<div class="the_excrept">\s*<h2><a href="(.*)" rel="bookmark">(.*)<\/a><\/h2>)'
 
-    indices = {'title': 2, 'url': 1, 'thumbnail': -1}
+    indices = {'title': 4, 'url': 3, 'thumbnail': 2}
 
     paging_params = {
             'title_id': 32018,

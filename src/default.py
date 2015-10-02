@@ -33,6 +33,8 @@ def run():
             _show_episodes_menu(params)
         elif page_type == 'show-episode':
             _show_episode(params)
+        elif page_type == 'recent-episodes':
+            _show_episodes_menu(params)
     else:
         _show_main_menu()
 
